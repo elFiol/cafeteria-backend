@@ -4,6 +4,7 @@ import 'dotenv/config'; // permite procesar variables de entornos
 import morgan from "morgan";
 import {fileURLToPath} from 'url';
 import path from "path";
+import Productosrouter from "./src/routes/productos.routes.js";
 
 console.log("hola mundo")
 //1 - configurar un puerto
@@ -26,9 +27,12 @@ const __dirname = path.dirname(__filename)
 // console.log(__dirname)
 // console.log(path.join(__dirname, 'public'))
 app.use(express.static(path.join(__dirname, 'public')))
-//3 - configurar las rutas
-app.get('/', (req, res)=>{
-    console.log("alguien solicito algo")
-    // falta configurar la respuesta 
-    res.send("respuesta desde el backend de cafesito")
-})
+// 3 - configurar las rutas
+
+app.use("/api", Productosrouter)
+
+// app.get('/', (req, res)=>{
+//     console.log("alguien solicito algo")
+//     // falta configurar la respuesta 
+//     res.send("respuesta desde el backend de cafesito")
+// })
