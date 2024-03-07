@@ -5,6 +5,7 @@ import morgan from "morgan";
 import {fileURLToPath} from 'url';
 import path from "path";
 import Productosrouter from "./src/routes/productos.routes.js";
+import "./src/database/database.js"
 
 console.log("hola mundo")
 //1 - configurar un puerto
