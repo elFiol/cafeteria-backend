@@ -25,7 +25,7 @@ const productosSchema = new Schema({
         minLength: 5,
         maxLength: 50,
     },
-    descripcion_breve: {
+    descripcion_amplia: {
         required: true,
         type: String,
         minLength: 50,
