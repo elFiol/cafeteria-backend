@@ -14,6 +14,19 @@ export const listarProductos = async(req,res) => {
 
 }
 
+export const obtenerProducto = async(req,res) => {
+    try{
+        console.log(req.params.id)
+        const producto = await Producto.findById(req.params.id)
+        res.status(200).json(producto)
+    }catch(error){
+        console.log(error)
+        res.status(404).json({
+            mensaje: "no se pudo encontrar el producto"
+        })
+    }
+}
+
 export const crearProductos = async(req, res) => {
     try{
         // verificar los datos del body
